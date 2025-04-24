@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toko Online Elegan</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h2 {
+      text-align: center;
+      color: #007bff;
+    }
+    .search-bar {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .search-bar input {
+      padding: 0.5rem;
+      width: 60%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .product {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .product img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .product h3 {
+      margin: 1rem 0 0.5rem;
+      color: #0056b3;
+    }
+    .product p {
+      margin: 0.5rem 0;
+    }
+    .buy-button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .buy-button:hover {
+      background-color: #0056b3;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #007bff;
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Toko Online Elegan</h1>
+  </header>
+  <div class="container">
+    <h2>Katalog Produk</h2>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Cari produk..." onkeyup="searchProducts()">
+    </div>
+    <div class="product-grid" id="productGrid">
+      <div class="product">
+        <img src="https://via.placeholder.com/250x150" alt="Produk 1">
+        <h3>Produk 1</h3>
+        <p>Rp100.000</p>
+        <button class="buy-button">Beli</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/250x150" alt="Produk 2">
+        <h3>Produk 2</h3>
+        <p>Rp150.000</p>
+        <button class="buy-button">Beli</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/250x150" alt="Produk 3">
+        <h3>Produk 3</h3>
+        <p>Rp200.000</p>
+        <button class="buy-button">Beli</button>
+      </div>
+    </div>
+  </div>
+  <footer>
+    &copy; 2025 Toko Online Elegan. Semua Hak Dilindungi.
+  </footer>
+  <script>
+    function searchProducts() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const products = document.querySelectorAll('.product');
+      products.forEach(product => {
+        const name = product.querySelector('h3').textContent.toLowerCase();
+        product.style.display = name.includes(input) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
